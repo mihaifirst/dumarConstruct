@@ -1,10 +1,9 @@
 import React from "react";
-import style from "/src/components/Login/Login.module.css";
-import { useState, useEffect } from "react";
-import Button from "@mui/material/Button";
+import style from "../../styles/Auth.module.css";
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { setAuthToken, getAuthToken } from "../../helpers/_token";
+import { setAuthToken } from "../../helpers/_token";
 
 const defaultFormRegister = {
   email: "alex123@example.com",
@@ -14,7 +13,6 @@ const defaultFormRegister = {
 const Login = () => {
   const [userData, setUserData] = useState(defaultFormRegister);
   const navigate = useNavigate();
-  const token = getAuthToken();
 
   const endpoint = "https://dumar-construct-production.up.railway.app/api";
 
@@ -23,7 +21,6 @@ const Login = () => {
     fetch(`${endpoint}/users/login`, {
       method: "POST",
       headers: new Headers({
-        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       }),
       body: JSON.stringify(userData),
@@ -31,9 +28,9 @@ const Login = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setAuthToken();
+        setAuthToken(data.token);
         toast.success("Login successfull");
-        // navigate("./dashboard");
+        navigate("/dashboard");
       })
       .catch((error) => {
         console.error("Eroare la înregistrare:", error);
@@ -54,7 +51,7 @@ const Login = () => {
   };
   return (
     <>
-      <div className={style.loginComponent}>
+      <div className={style.authComponent}>
         <div className={style.background}>
           <div className={style.shape}></div>
           <div className={style.shape}></div>
@@ -85,14 +82,16 @@ const Login = () => {
               className={style.input}
             ></input>
           </div>
-          <div className={style.containerButtons}>
-            <Button variant="contained" onClick={handleLogin}>
-              Login
-            </Button>
-            <Button variant="contained" onClick={advanceToRegister}>
-              Go to Register
-            </Button>
-          </div>
+
+          <p className={style.text}>
+            Create an account
+            <span className={style.spanText} onClick={advanceToRegister}>
+              here
+            </span>
+          </p>
+          <span className={style.submitButton} onClick={handleLogin}>
+            Login
+          </span>
         </form>
         <ToastContainer />
       </div>

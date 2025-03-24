@@ -1,9 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import style from "/src/components/Register/Register.module.css";
+import style from "../../styles/Auth.module.css";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import Button from "@mui/material/Button";
 
 const defaultFormRegister = {
   username: "alex1",
@@ -52,7 +51,7 @@ const Register = () => {
 
   return (
     <>
-      <div className={style.registerComponent}>
+      <div className={style.authComponent}>
         <div className={style.background}>
           <div className={style.shape}></div>
           <div className={style.shape}></div>
@@ -103,14 +102,15 @@ const Register = () => {
               className={style.input}
             ></input>
           </div>
-          <div className={style.containerButtons}>
-            <Button variant="contained" onClick={handleRegister}>
-              Login
-            </Button>
-            <Button variant="contained" onClick={advanceToLogin}>
+          <p className={style.text}>
+            Already have an account?
+            <span className={style.spanText} onClick={advanceToLogin}>
               Go to Login
-            </Button>
-          </div>
+            </span>
+          </p>
+          <span className={style.submitButton} onClick={handleRegister}>
+            Register
+          </span>
         </form>
         <ToastContainer />
       </div>
