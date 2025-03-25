@@ -2,4 +2,19 @@
   width: 324px;
   height: 100vh;
   background-color: aqua;
+  padding: 40px 32px;
+}
+
+.list {
+  list-style: none;
+}
+
+.list li {
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.listItem {
+  margin-left: 10px;
 }
