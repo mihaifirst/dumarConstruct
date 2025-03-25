@@ -1,6 +1,9 @@
-.mainContainer {
+.page {
+  display: flex;
+}
+
+.mainContent {
   height: 100vh;
-  background-color: #f5f5fa;
   flex: 1;
   padding: 48px 24px 24px;
 }

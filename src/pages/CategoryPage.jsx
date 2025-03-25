@@ -1,8 +1,11 @@
 import React from "react";
-import MainLayout from "../components/MainLayout/MainLayout";
 
 const CategoryPage = () => {
-  return <MainLayout title="Categorii de produse"> </MainLayout>;
+  return (
+    <div>
+      <h1>Categorii de produse</h1>
+    </div>
+  );
 };
 
 export default CategoryPage;
