@@ -1,0 +1,26 @@
+.main {
+  text-align: left;
+
+  &__subtitle {
+    margin-top: 20px;
+    color: #696969;
+  }
+
+  &__searchBox {
+    width: 360px;
+    height: 44px;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 32px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__input {
+      font-size: 24px;
+      padding: 0 5px;
+      border: none;
+    }
+  }
+}

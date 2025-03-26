@@ -1,9 +1,11 @@
 .page {
   display: flex;
+  width: 100vw;
 }
 
 .mainContent {
   height: 100vh;
   flex: 1;
   padding: 48px 24px 24px;
+  background-color: #f5f5fa;
 }

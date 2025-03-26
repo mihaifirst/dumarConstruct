@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import CategoryPage from "./pages/CategoryPage";
-import "../src/styles/Page.module.css";
+import "../src/styles/Page.module.scss";
 import PricesPage from "./pages/PricesPage";
 import ProductsPage from "./pages/ProductsPage";
 import BlogPage from "./pages/BlogPage";
@@ -37,7 +37,7 @@ function App() {
       return;
     }
 
-    navigate("/dashboard");
+    // navigate("/dashboard");
   }, []);
 
   return (

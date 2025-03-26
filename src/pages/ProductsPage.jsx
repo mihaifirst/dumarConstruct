@@ -1,9 +1,10 @@
 import React from "react";
+import style from "../styles/Page.module.scss";
 
 const ProductsPage = () => {
   return (
-    <div>
-      <h1>Categorii produse</h1>
+    <div className={style.main}>
+      <h1 className={style.main__title}>ProductsPage</h1>
     </div>
   );
 };

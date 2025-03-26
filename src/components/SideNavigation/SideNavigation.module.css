@@ -13,7 +13,6 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 32px;
   list-style: none;
 }
 
@@ -26,6 +25,8 @@
 .list__item {
   padding: 16px 7px;
   border-radius: 5px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
 }
 
 .list__link {
@@ -34,10 +35,13 @@
   color: #9f9f9f;
 }
 
-.list__item:hover,
 .list__item.selected {
   background-color: #ffeded;
-  border-left: 3px solid #873d3d;
+  border-left-color: #873d3d;
+}
+
+.list__item:hover {
+  background-color: #ffeded;
 }
 
 .sidebar__logout {
