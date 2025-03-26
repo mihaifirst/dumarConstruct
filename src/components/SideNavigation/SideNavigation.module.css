@@ -1,11 +1,19 @@
-.container {
+.sidebar {
   width: 324px;
   height: 100vh;
-  background-color: aqua;
+  display: flex;
+  flex-direction: column;
   padding: 40px 32px;
 }
 
+.sidebar__image {
+  margin-bottom: 48px;
+}
+
 .list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
   list-style: none;
 }
 
@@ -15,6 +23,26 @@
   align-items: center;
 }
 
-.listItem {
-  margin-left: 10px;
+.list__item {
+  padding: 16px 7px;
+  border-radius: 5px;
+}
+
+.list__link {
+  margin-left: 12px;
+  text-decoration: none;
+  color: #9f9f9f;
+}
+
+.list__item:hover,
+.list__item.selected {
+  background-color: #ffeded;
+  border-left: 3px solid #873d3d;
+}
+
+.sidebar__logout {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin-top: auto;
 }
